@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="hero">
+        
+            <div class="selector">
+                <div id="selectField">
+                    <p id="selectText">Select Social Media</p>
+                    <img id="arrowIcon" src="SelectMenu_Img/arrow.png" alt="arrow pic">
+                </div>
+                <ul id="list" class="hide">
+                    <li class="options">
+                        <img src="SelectMenu_Img/facebook.png" alt="facebook pic">
+                        <p>Facebook</p>
+                    </li>
+                    <li class="options">
+                        <img src="SelectMenu_Img/youtube.png" alt="youtube pic">
+                        <p>Youtube</p>
+                    </li>
+                    <li class="options">
+                        <img src="SelectMenu_Img/instagram.png" alt="instagram pic">
+                        <p>Instagram</p>
+                    </li>
+                    <li class="options">
+                        <img src="SelectMenu_Img/twitter.png" alt="twitter pic">
+                        <p>Twitter</p>
+                    </li>
+                    <li class="options">
+                        <img src="SelectMenu_Img/pinterest.png" alt="pinterest pic">
+                        <p>Pinterest</p>
+                    </li>
+                    <li class="options">
+                        <img src="SelectMenu_Img/whatsapp.png" alt="whatsapp pic">
+                        <p>Whatsapp</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+
+            const selectField = document.getElementById("selectField");
+            const selectText = document.getElementById("selectText");
+            const options = document.getElementsByClassName("options");
+            const list = document.getElementById("list");
+            const arrowIcon = document.getElementById("arrowIcon");
+
+            selectField.onclick = function(){
+                list.classList.toggle("hide");
+                arrowIcon.classList.toggle("rotate");
+            }
+
+            for(option of options){
+                option.onclick = function(){
+                    selectText.innerHTML = this.textContent;
+                    list.classList.toggle("hide");
+                    arrowIcon.classList.toggle("rotate");
+                }
+            }
+
+
+
+        </script>
+    </body>
+</html>

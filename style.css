@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "IBM Plex Mono", sans-serif;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+}
+::-webkit-scrollbar-button {
+    background: 0;
+    height: 0;
+}
+:root{
+    --primary-color: #42eefa;
+    --secondary-color: #34575a;
+    --white-1: #fff;
+    --brand-color: #fff;
+    --grey-1: #353131;
+    --bg-color: linear-gradient(45deg, rgb(27, 22, 37), rgb(12, 0, 27));
+    --nav-color: rgb(31, 23, 30);
+    --scrollbar-color: red;
+}
+.dark-theme{
+    --primary-color: #fa4242;
+    --secondary-color: #9c1515;
+    --white-1: #fff;
+    --brand-color: #000000;
+    --grey-1: #353131;
+    --bg-color: linear-gradient(45deg, rgb(229, 217, 255), rgb(238, 238, 238));
+    --nav-color: rgba(161, 193, 252, 0.7);
+    --scrollbar-color: red;
+}
+*{
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) transparent;
+}
+#header{
+    width: auto;
+    align-items: center;
+    height: 950px;
+}
+.tool{
+    position: fixed;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    top: 903px;
+    left: 1837px;
+}
+#icon{
+    position: fixed;
+    width: 35px;
+    top: 95%;
+    left: 96.7%;
+    transition: transform .3s;
+}
+#icon:hover{
+    transform: rotate(360deg);
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+}
+nav{
+    position: relative;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--primary-color);
+    background: var(--nav-color);
+    padding: 20px;
+}
+nav span{
+    border-bottom: 2px solid var(--secondary-color);
+}
+#search-box{
+    position: absolute;
+    border-radius: 20px;
+    border: 1px solid var(--secondary-color);
+    outline: 0;
+    width: 200px;
+    height: 40px;
+    top: 20%;
+    right: 2%;
+}
+i{
+    position: absolute;
+    background: var(--secondary-color);
+    color: var(--white-1);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    padding-top: 10px;
+    top: 13px;
+    right: 2%;
+    width: 40px;
+    height: 40px;
+}
+#brand{
+    height: 80vh;
+    font-size: 60px;
+    display: flex;
+    color: var(--brand-color);
+    align-items: center;
+    justify-content: center;
+}
+main{
+    width: auto;
+    background: var(--bg-color);
+}
+.category{
+    display: inline-block;
+    font-size: 35px;
+    font-weight: 600;
+    color: var(--white-1);
+    margin: 80px auto;
+    margin-left: 80px;
+    padding: 20px;
+    border-left: 3px solid var(--primary-color);
+}
+.category span{
+    background-color: var(--secondary-color);
+    border-radius: 35px;
+    padding: 20px;
+}
+.category span:hover{
+    box-shadow: 0px 0px 20px var(--secondary-color);
+}
+.project-box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center; 
+    border-top: 10px solid var(--primary-color);
+}
+.project-box .project:nth-child(1){
+    background-image: url(preview-images/List.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(2){
+    background-image: url(preview-images/Quiz-app.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(3){
+    background-image: url(preview-images/Password-generator.png);
+    background-size: cover;
+    background-position: left;
+}
+.project-box .project:nth-child(4){
+    background-image: url(preview-images/Voice.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(5){
+    background-image: url(preview-images/Toast.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(6){
+    background-image: url(preview-images/Sheet.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(7){
+    background-image: url(preview-images/Stop-watch.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(8){
+    background-image: url(preview-images/Quote.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(9){
+    background-image: url(preview-images/QR.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(10){
+    background-image: url(preview-images/Popup.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(11){
+    background-image: url(preview-images/toggle.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(12){
+    background-image: url(preview-images/Strength.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(13){
+    background-image: url(preview-images/Notes.png);
+    background-size: cover;
+    background-position: left;
+}
+.project-box .project:nth-child(14){
+    background-image: url(preview-images/Music.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(15){
+    background-image: url(preview-images/Calendar.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(16){
+    background-image: url(preview-images/BgTransition.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(17){
+    background-image: url(preview-images/HorizontalImage.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(18){
+    background-image: url(preview-images/FormValidation.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(19){
+    background-image: url(preview-images/Menu.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(20){
+    background-image: url(preview-images/ComingSoon.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(21){
+    background-image: url(preview-images/Cal.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(22){
+    background-image: url(preview-images/AgeCal.png);
+    background-size: cover;
+    background-position: center;
+}
+.project-box .project:nth-child(23){
+    background-image: url(preview-images/Circular.png);
+    background-size: cover;
+    background-position: center;
+}
+.project {
+    width: 350px;
+    height: 250px;
+    margin: 100px 50px 100px 60px;
+    outline: 0;
+    border-radius: 10px;
+    background: var(--white-1);
+    cursor: pointer;
+    transition: transform 0.3s;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.project:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px var(--secondary-color);
+}
+.project h2{
+    font-size: 20px;
+    color: var(--primary-color);
+    padding: 10px;
+    outline: 0;
+    border: 5px solid var(--grey-1);
+    background: var(--grey-1);
+    user-select: none;
+}
+.project p{
+    display: inline-block;
+    position: relative;
+    color: var(--white-1);
+    font-weight: 700;
+    top: 80%;
+    left: 56%;
+    padding: 15px;
+    background: linear-gradient(45deg, #0f1527, #220158);
+    transition: transform 0.3s;
+    border-radius: 10px;
+    user-select: none;
+}
+.project:hover p{
+    transform: translateY(-50px);
+    opacity: 1;
+}
+.project p span:nth-child(1){
+    color: rgb(209, 209, 4);
+}
+.project p span:nth-child(2){
+    color: rgb(56, 72, 214);
+}
+.project p span:nth-child(3){
+    color: rgb(190, 15, 9);
+}
