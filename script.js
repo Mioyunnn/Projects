@@ -11,19 +11,19 @@ icon.onclick = function(){
 }
 //連結們
 document.getElementById('project-1').addEventListener('click', function() {
-    window.location.href = '/Product Page Design/index.html';
+    window.location.href = 'Product Page Design/ch1.html';
 });
 document.getElementById('project-2').addEventListener('click', function() {
-    window.location.href = '/Image Search Engine/index.html';
+    window.location.href = 'Image Search Engine/index.html';
 });
 document.getElementById('project-3').addEventListener('click', function() {
-    window.location.href = '/Random Password Generator/index.html';
+    window.location.href = 'Random Password Generator/index.html';
 });
 document.getElementById('project-4').addEventListener('click', function() {
-    window.location.href = '/Voice Converter/index.html';
+    window.location.href = 'Voice Converter/index.html';
 });
 document.getElementById('project-5').addEventListener('click', function() {
-    window.location.href = '/Toast Notification/index.html';
+    window.location.href = 'Toast Notification/index.html';
 });
 document.getElementById('project-6').addEventListener('click', function() {
     window.location.href = '/Subscribe Form to Google Sheet/index.html';
