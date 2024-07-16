@@ -399,10 +399,43 @@ main{
 .project p span:nth-child(3){
     color: rgb(190, 15, 9);
 }
-@media (max-width: 360px){
+@media (max-width: 768px){
     #brand{
         font-size: 20px;
     }
+    #brand h1{
+        animation: moveLine 4s infinite linear;
+
+    }
+    @keyframes moveLine{
+    0% {
+        background-position: -100px 1px, calc(100% - 1px) -100px, calc(100% + 100px) calc(100% - 1px), 1px 0px;
+    }
+    5% {
+        background-position: 0px 1px, calc(100% - 1px) -100px, calc(100% + 100px) calc(100% - 1px), 1px -100px;
+    }
+    30% {
+        background-position: 100% 1px, calc(100% - 1px) -100px, calc(100% + 100px) calc(100% - 1px), 1px -100px;
+    }
+    35% {
+        background-position: calc(100% + 100px) 1px, calc(100% - 1px) 0px, calc(100% + 100px) calc(100% - 1px), 1px -100px;
+    }
+    50% {
+        background-position: calc(100% + 100px) 1px, calc(100% - 1px) 100%, calc(100% + 100px) calc(100% - 1px), -100px -100px;
+    }
+    55% {
+        background-position: calc(100% + 100px) 1px, calc(100% - 1px) calc(100% + 100px), 100% calc(100% - 1px), -100px calc(100% + 100px);
+    }
+    80% {
+        background-position: calc(100% + 100px) 1px, calc(100% - 1px) calc(100% + 100px), 0px calc(100% - 1px), 1px calc(100% + 100px);
+    }
+    85% {
+        background-position: calc(100% + 100px) 1px, calc(100% - 1px) calc(100% + 100px), -100px calc(100% - 1px), 1px 100%;
+    }
+    100% {
+        background-position: calc(100% + 100px) 1px, calc(100% - 1px) calc(100% + 100px), -100px calc(100% - 1px), 1px 0px;
+    }
+}
     .category{
         margin-left: 30px;
     }
@@ -410,15 +443,24 @@ main{
         font-size: 15px;
         padding: 12px;
     }
+    .project-box{
+        gap: 2px;
+    }
     .project{
+        margin-left: 25px;
+        margin-right: 25px;
         margin-bottom: 5px;
     }
     .project h2{
-        font-size: 12px;
+        font-size: 14px;
     }
     .project p{
         top: 82%;
-        left: 8%;
+        left: 19%;
+    }
+    #icon{
+        top: 92%;
+        left: 80%;
     }
     *{
         scrollbar-width: none;
