@@ -94,3 +94,26 @@ document.getElementById('project-27').addEventListener('click', function() {
 document.getElementById('project-28').addEventListener('click', function() {
     window.location.href = '/To-do List App/index.html';
 });
+
+let dates = ["2024 / 7 / 15", "2024 / 7 / 15", "2024 / 7 / 16",
+             "2024 / 7 / 16", "2024 / 7 / 14", "2024 / 7 / 14",
+             "2024 / 7 / 09", "2024 / 7 / 09", "2024 / 7 / 07",
+             "2024 / 7 / 06", "2024 / 7 / 06", "2024 / 7 / 07",
+             "2024 / 7 / 03", "2024 / 7 / 03", "2024 / 7 / 04",
+             "2024 / 7 / 12", "2024 / 7 / 15", "2024 / 7 / 13",
+             "2024 / 7 / 04", "2024 / 7 / 13", "2024 / 7 / 12",
+             "2024 / 7 / 10", "2024 / 7 / 10", "2024 / 7 / 15", 
+             "2024 / 7 / 17", "2024 / 7 / 17", "2024 / 7 / 11", 
+             "2024 / 7 / 05"];
+let originLangs = "<span>HTML</span>, <span>CSS</span>, <span>JS</span>"
+let currentLangs = document.querySelectorAll('.project p');
+
+currentLangs.forEach((langElement, index) => {
+    langElement.addEventListener("mouseover", () => {
+        langElement.innerHTML = dates[index];
+    });
+
+    langElement.addEventListener("mouseleave", () => {
+        langElement.innerHTML = originLangs;
+    })
+})
