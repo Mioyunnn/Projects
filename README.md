@@ -4,4 +4,4 @@
 <h2>2. 解決了什麼樣的問題?</h2>
    <p>A: 發現製作網站同時需要考慮RWD的問題、學習到可以利用ForEach為每個項目快速地附上資料、Flex、Position解決排版問題</p>
 <h2>3. 以及使用了哪些技術?</h2>
-   <p style="background-color:yellow;">A: 目前使用HTML, CSS, JS。 </p>
+   <p style="background-color:yellow">A: 目前使用HTML, CSS, JS。 </p>
