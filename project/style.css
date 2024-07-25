@@ -5,6 +5,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Edu AU VIC WA NT Hand';
+    transform: all 0.3s forwards;
 }
 #shop-header{
     padding: 10px;
@@ -47,9 +48,11 @@
     color: #fff;
 }
 aside{
+    position: sticky;
+    top: 10px;
     margin: 1em;
     width: 25%;
-    height: 70vh;
+    height: 100%;
     border-radius: 7px;
     background-color: #fff;
     border: 2px solid #d4d4d4;
@@ -73,16 +76,22 @@ aside{
     border-radius: 10px;
     color: #000000;
 }
-.clothes-wrapper{
+.clothes-wrapper, .color-wrapper, .size-wrapper{
     display: flex;
     flex-direction: column;
 }
-#t-shirt, #skirt, #pants{
+#t-shirt, #skirt, #pants, #white, #brown, #green, #m, #l, #xl{
     display: none;
 }
 .t-shirt label, 
 .skirt label, 
-.pants label{
+.pants label,
+.white label,
+.brown label,
+.green label,
+.m label,
+.l label,
+.xl label{
     display: flex;
     align-items: center;
     font-weight: 500;
@@ -90,19 +99,32 @@ aside{
 }
 .t-shirt label::before, 
 .skirt label::before, 
-.pants label::before{
+.pants label::before,
+.white label::before,
+.brown label::before,
+.green label::before,
+.m label::before,
+.l label::before,
+.xl label::before{
     content: '';
     position: relative;
     background-image: url(uncheck.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    margin-right: .7em;
     width: 20px;
     height: 20px;
 }
 .t-shirt label.aside-checked::before, 
 .skirt label.aside-checked::before, 
-.pants label.aside-checked::before{
+.pants label.aside-checked::before,
+.white label.aside-checked::before,
+.brown label.aside-checked::before,
+.green label.aside-checked::before,
+.m label.aside-checked::before,
+.l label.aside-checked::before,
+.xl label.aside-checked::before{
     content: '';
     position: relative;
     background-image: url(check.svg);
@@ -115,6 +137,46 @@ aside{
 .clothes-wrapper div{
     margin-top: 1.2em;
     margin-bottom: 1.2em;
+}
+.color-wrapper h3{
+    margin-top: 1em;
+}
+.color-wrapper div, .size-wrapper div{
+    margin-top: .7em;
+    margin-bottom: .7em;
+}
+.price-wrapper{
+    display: flex;
+    font-weight: 500;
+    max-width: 200px;
+    justify-content: space-between;
+}
+input[type=range]{
+    appearance: none;
+    width: 100%;
+}
+input[type=range]::-webkit-slider-runnable-track{
+    width: 100%;
+    max-width: 200px;
+    height: 8px;
+    cursor: pointer;
+    background: #e0e0e0;
+    border-radius: 4px;
+    border: 1px solid #dbdbdb;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #000000;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #c7c6c6;
+    margin-top: -7px;
+}
+.range-wrapper label{
+    display: none;
 }
 #shop-main{
     display: flex;
@@ -148,10 +210,17 @@ aside{
     align-items: center;
     position: relative;
 }
-.search-box > i{
-    position: absolute;
-    left: 85%;
-    font-size: 1.2em;
+.search-box::after{
+    content: '';
+    position: relative;
+    z-index: 4;
+    background-image: url(search.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: -50px;
+    width: 20px;
+    height: 20px;
 }
 .tags{
     display: flex;
@@ -184,6 +253,20 @@ aside{
 .sell-item img, .sell-item h4, .sell-item p{
     margin: 1em;
 }
+.item-tags{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-size: .7em;
+    font-weight: 700;
+}
+.item-tags span{
+    margin: .5em;
+    padding: 5px 15px;
+    color: #10ec73;
+    background-color: #000000;
+    border-radius: 10px;
+}
 @media (max-width: 1110px){
     .nav-wrapper span{
         display: none;
@@ -192,10 +275,15 @@ aside{
         flex-direction: column;
     }
     .tags{
+        margin-top: 2em;
         flex-wrap: wrap;
     }
     .tags span{
         margin: .4em;
+        font-size: 1em;
+    }
+    .items-wrapper{
+        margin-top: .5em;
     }
 }
 #sell-footer{

@@ -31,10 +31,6 @@
                 <div class="aside-wrapper">
                     <h3>Keywords</h3>
                     <div class="keywords-wrapper">
-                        <span>Spring <i class="fa-solid fa-xmark"></i></span>
-                        <span>Smart <i class="fa-solid fa-xmark"></i></span>
-                        <span>Modern <i class="fa-solid fa-xmark"></i></span>
-                        <span>Classic <i class="fa-solid fa-xmark"></i></span>
                     </div>
                     <div class="clothes-wrapper">
                         <div class="t-shirt">
@@ -53,6 +49,44 @@
                             <p>Perfectly show your legs' curve to the world.</p>
                         </div>
                     </div>
+                    <div class="range-wrapper">
+                        <div class="price-wrapper">
+                            <span>Price</span>
+                            <span id="price-range">$0-2000</span>
+                        </div>
+                        <label for="price">Price</label>
+                        <input type="range" id="price" name="price" min="0" max="2000">
+                    </div>
+                    <div class="color-wrapper">
+                        <h3>Color</h3>
+                        <div class="white">
+                            <input type="checkbox" id="white">
+                            <label for="white">White</label>
+                        </div>
+                        <div class="brown">
+                            <input type="checkbox" id="brown">
+                            <label for="brown">Brown</label>
+                        </div>
+                        <div class="green">
+                            <input type="checkbox" id="green">
+                            <label for="green">Green</label>
+                        </div>
+                    </div>
+                    <div class="size-wrapper">
+                        <h3>Size</h3>
+                        <div class="m">
+                            <input type="checkbox" id="m">
+                            <label for="m">M</label>
+                        </div>
+                        <div class="l">
+                            <input type="checkbox" id="l">
+                            <label for="l">L</label>
+                        </div>
+                        <div class="xl">
+                            <input type="checkbox" id="xl">
+                            <label for="xl">XL</label>
+                        </div>
+                    </div>
                 </div>
             </aside>
             <main id="sell-main">
@@ -61,7 +95,6 @@
                         <div class="search-box">
                             <label for="sell-searchbox"></label>
                             <input type="text" placeholder="Search for..." id="sell-searchbox">
-                            <i class="fa-solid fa-magnifying-glass"></i>
                         </div>
                         <div class="tags">
                             <span><i class="fa-solid fa-check"></i>New</span>
@@ -76,41 +109,81 @@
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">M</span>
+                                    <span class="clothes-style">T-shirt</span>
+                                    <span class="color">Green</span>
+                                </div>
                             </div>
                             <div class="sell-item">
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">L</span>
+                                    <span class="clothes-style">T-shirt</span>
+                                    <span class="color">White</span>
+                                </div>
                             </div>
                             <div class="sell-item">
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">M</span>
+                                    <span class="clothes-style">Skirt</span>
+                                    <span class="color">Brown</span>
+                                </div>
                             </div>
                             <div class="sell-item">
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">XL</span>
+                                    <span class="clothes-style">Pants</span>
+                                    <span class="color">White</span>
+                                </div>
                             </div>
                             <div class="sell-item">
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">M</span>
+                                    <span class="clothes-style">Pants</span>
+                                    <span class="color">Green</span>
+                                </div>
                             </div>
                             <div class="sell-item">
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">L</span>
+                                    <span class="clothes-style">Skirt</span>
+                                    <span class="color">Green</span>
+                                </div>
                             </div>
                             <div class="sell-item">
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">XL</span>
+                                    <span class="clothes-style">Skirt</span>
+                                    <span class="color">White</span>
+                                </div>
                             </div>
                             <div class="sell-item">
                                 <img src="https://fakeimg.pl/250x250/250" alt="">
                                 <h4>text</h4>
                                 <p>$0</p>
+                                <div class="item-tags">
+                                    <span class="size">XL</span>
+                                    <span class="clothes-style">T-shirt</span>
+                                    <span class="color">Brown</span>
+                                </div>
                             </div>
                         </div>
                     </section>
