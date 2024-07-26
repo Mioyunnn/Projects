@@ -253,6 +253,9 @@ input[type=range]::-webkit-slider-thumb {
 .sell-item img, .sell-item h4, .sell-item p{
     margin: 1em;
 }
+.sell-item h4{
+    font-size: 1.5em;
+}
 .item-tags{
     display: flex;
     flex-direction: row;

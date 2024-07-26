@@ -17,97 +17,51 @@ function updateSellItemDisplay() {
         // If the item has any tag matching the active tags, display it, otherwise hide it
         const shouldDisplay = itemTags.some(tag => activeTags.includes(tag));
         item.style.display = shouldDisplay ? 'block' : 'none';
+        
     });
 }
+function toggleTag(tagElement, keywordsWrapper) {
+    const isChecked = tagElement.classList.toggle("aside-checked");
 
-let asideTags = document.querySelectorAll(".clothes-wrapper label");
+    if (isChecked) {
+        const newTag = document.createElement("span");
+        newTag.innerHTML = `${tagElement.innerText} <i class="fa-solid fa-xmark"></i>`;
+        keywordsWrapper.appendChild(newTag);
 
-/*asideTag Check*/
-asideTags.forEach(asideTag => {
-    asideTag.addEventListener("click", () => {
-        asideTag.classList.toggle("aside-checked");
-        const keywordsWrapper = document.querySelector(".keywords-wrapper");
-
-        if(asideTag.classList.contains("aside-checked")){
-            const newTag = document.createElement("span");
-            newTag.innerHTML = `${asideTag.innerText} <i class="fa-solid fa-xmark"></i>`;
-            keywordsWrapper.appendChild(newTag);
-
-            newTag.querySelector("i").addEventListener("click", () => {
-                newTag.remove();
-                asideTag.classList.toggle("aside-checked");
-            });
+        newTag.querySelector("i").addEventListener("click", () => {
+            newTag.remove();
+            tagElement.classList.remove("aside-checked");
+            updateSellItemDisplay();
+        });
+    }
+    else {
+        const tagToRemove = Array.from(keywordsWrapper.querySelectorAll("span"))
+            .find(span => span.innerText.trim().startsWith(tagElement.innerText.trim()));
+        if (tagToRemove) {
+            tagToRemove.remove();
         }
-        else{
-            const newKeywordsWrapper = keywordsWrapper.querySelectorAll("span");
-            newKeywordsWrapper.forEach(newKeywordsTag => {
-                if(newKeywordsTag.innerText.trim() === asideTag.innerText.trim()){
-                    newKeywordsTag.remove();
-                }
-            })
-        }
-        updateSellItemDisplay()
-    })
-})
+    }
+    updateSellItemDisplay();
+}
 
-let colorTags = document.querySelectorAll(".color-wrapper label");
+document.querySelectorAll(".clothes-wrapper label, .color-wrapper label, .size-wrapper label").forEach(tag => {
+    tag.addEventListener("click", () => {
+        toggleTag(tag, document.querySelector(".keywords-wrapper"));
+    });
+});
 
-colorTags.forEach(colorTag => {
-    colorTag.addEventListener("click", () => {
-        colorTag.classList.toggle("aside-checked");
-        const keywordsWrapper = document.querySelector(".keywords-wrapper");
+document.getElementById("reset-btn").addEventListener("click", () => {
+    const keywordsWrapper = document.querySelector(".keywords-wrapper");
+    keywordsWrapper.innerHTML = '';
 
-        if(colorTag.classList.contains("aside-checked")){
-            const newTag = document.createElement("span");
-            newTag.innerHTML = `${colorTag.innerText} <i class="fa-solid fa-xmark"></i>`;
-            keywordsWrapper.appendChild(newTag);
+    document.querySelectorAll(".clothes-wrapper label, .color-wrapper label, .size-wrapper label").forEach(tag => {
+        tag.classList.remove("aside-checked");
+    });
 
-            newTag.querySelector("i").addEventListener("click", () => {
-                newTag.remove();
-                colorTag.classList.toggle("aside-checked");
-            });
-        }
-        else{
-            const newKeywordsWrapper = keywordsWrapper.querySelectorAll("span");
-            newKeywordsWrapper.forEach(newKeywordsTag => {
-                if(newKeywordsTag.innerText.trim() === colorTag.innerText.trim()){
-                    newKeywordsTag.remove();
-                }
-            })
-        }
-        updateSellItemDisplay()
-    })
-})
-
-let sizeTags = document.querySelectorAll(".size-wrapper label");
-
-sizeTags.forEach(sizeTag => {
-    sizeTag.addEventListener("click", () => {
-        sizeTag.classList.toggle("aside-checked");
-        const keywordsWrapper = document.querySelector(".keywords-wrapper");
-
-        if(sizeTag.classList.contains("aside-checked")){
-            const newTag = document.createElement("span");
-            newTag.innerHTML = `${sizeTag.innerText} <i class="fa-solid fa-xmark"></i>`;
-            keywordsWrapper.appendChild(newTag);
-
-            newTag.querySelector("i").addEventListener("click", () => {
-                newTag.remove();
-                sizeTag.classList.toggle("aside-checked");
-            });
-        }
-        else{
-            const newKeywordsWrapper = keywordsWrapper.querySelectorAll("span");
-            newKeywordsWrapper.forEach(newKeywordsTag => {
-                if(newKeywordsTag.innerText.trim() === sizeTag.innerText.trim()){
-                    newKeywordsTag.remove();
-                }
-            })
-        }
-        updateSellItemDisplay()
-    })
-})
-
+    document.querySelectorAll(".sell-item").forEach(item => {
+        item.style.display = 'block';
+    });
+});
 
 /* change the price with input range*/
 
@@ -120,7 +74,6 @@ rangeInput.addEventListener("input", () => {
 })
 
 const keywordsWrapper = document.querySelector(".keywords-wrapper");
-const sellItems = document.getElementsByClassName("sell-item");
 
 if(keywordsWrapper.contains("span")){
     sellItems.style.display = "none";
