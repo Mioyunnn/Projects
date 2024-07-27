@@ -1,53 +1,32 @@
-
-let tags = document.querySelectorAll(".tags span");
-
-tags.forEach(tag => {
-    tag.addEventListener("click" , () => {
-        tag.classList.toggle("checked");
-    })
-})
+const rangeInput = document.getElementById("price");
+const priceDisplay = document.getElementById("price-range");
+const sellItems = document.querySelectorAll(".sell-item");
 
 function updateSellItemDisplay() {
-    const keywordsWrapper = document.querySelector(".keywords-wrapper");
-    const sellItems = document.querySelectorAll(".sell-item");
-    const activeTags = Array.from(keywordsWrapper.querySelectorAll('span')).map(span => span.innerText.trim());
+    const value = parseInt(rangeInput.value, 10);
+    const activeTags = Array.from(document.querySelectorAll(".keywords-wrapper span")).map(span => span.innerText.trim());
 
     sellItems.forEach(item => {
+        const itemPrice = parseInt(item.querySelector("p").textContent.replace("$", ""), 10);
         const itemTags = Array.from(item.querySelectorAll('.item-tags span')).map(span => span.innerText.trim());
-        // If the item has any tag matching the active tags, display it, otherwise hide it
-        const shouldDisplay = itemTags.some(tag => activeTags.includes(tag));
-        item.style.display = shouldDisplay ? 'block' : 'none';
-        
+
+        const matchesPrice = itemPrice >= value;
+        const matchesTags = activeTags.length === 0 || activeTags.some(tag => itemTags.includes(tag));
+
+        item.style.display = matchesPrice && matchesTags ? 'block' : 'none';
     });
-}
-function toggleTag(tagElement, keywordsWrapper) {
-    const isChecked = tagElement.classList.toggle("aside-checked");
-
-    if (isChecked) {
-        const newTag = document.createElement("span");
-        newTag.innerHTML = `${tagElement.innerText} <i class="fa-solid fa-xmark"></i>`;
-        keywordsWrapper.appendChild(newTag);
-
-        newTag.querySelector("i").addEventListener("click", () => {
-            newTag.remove();
-            tagElement.classList.remove("aside-checked");
-            updateSellItemDisplay();
-        });
-    }
-    else {
-        const tagToRemove = Array.from(keywordsWrapper.querySelectorAll("span"))
-            .find(span => span.innerText.trim().startsWith(tagElement.innerText.trim()));
-        if (tagToRemove) {
-            tagToRemove.remove();
-        }
-    }
-    updateSellItemDisplay();
 }
 
 document.querySelectorAll(".clothes-wrapper label, .color-wrapper label, .size-wrapper label").forEach(tag => {
     tag.addEventListener("click", () => {
         toggleTag(tag, document.querySelector(".keywords-wrapper"));
+        updateSellItemDisplay();
     });
+});
+
+rangeInput.addEventListener("input", () => {
+    priceDisplay.textContent = `$${rangeInput.value}-2000`;
+    updateSellItemDisplay();
 });
 
 document.getElementById("reset-btn").addEventListener("click", () => {
@@ -63,18 +42,48 @@ document.getElementById("reset-btn").addEventListener("click", () => {
     });
 });
 
-/* change the price with input range*/
+function toggleTag(tagElement, keywordsWrapper) {
+    const isChecked = tagElement.classList.toggle("aside-checked");
 
-const rangeInput = document.getElementById("price");
-const priceDisplay = document.getElementById("price-range");
+    if (isChecked) {
+        const newTag = document.createElement("span");
+        newTag.innerHTML = `${tagElement.innerText} <i class="fa-solid fa-xmark"></i>`;
+        keywordsWrapper.appendChild(newTag);
 
-rangeInput.addEventListener("input", () => {
-    const value = rangeInput.value;
-    priceDisplay.textContent = `$${value}-2000`;
-})
+        newTag.querySelector("i").addEventListener("click", () => {
+            newTag.remove();
+            tagElement.classList.remove("aside-checked");
+            updateSellItemDisplay();
+        });
+    } else {
+        const tagToRemove = Array.from(keywordsWrapper.querySelectorAll("span"))
+            .find(span => span.innerText.trim().startsWith(tagElement.innerText.trim()));
+        if (tagToRemove) {
+            tagToRemove.remove();
+        }
+    }
+    updateSellItemDisplay();
+}
 
-const keywordsWrapper = document.querySelector(".keywords-wrapper");
+let tags = document.querySelectorAll(".tags span");
 
-if(keywordsWrapper.contains("span")){
-    sellItems.style.display = "none";
+tags.forEach(tag => {
+    tag.addEventListener("click", () => {
+        tag.classList.toggle("checked");
+    });
+});
+
+function updateSellItemDisplay() {
+    const value = parseInt(rangeInput.value, 10);
+    const activeTags = Array.from(document.querySelectorAll(".keywords-wrapper span")).map(span => span.innerText.trim());
+
+    sellItems.forEach(item => {
+        const itemPrice = parseInt(item.querySelector("p").textContent.replace("$", ""), 10);
+        const itemTags = Array.from(item.querySelectorAll('.item-tags span')).map(span => span.innerText.trim());
+
+        const matchesPrice = itemPrice >= value;
+        const matchesTags = activeTags.length === 0 || activeTags.some(tag => itemTags.includes(tag));
+
+        item.style.display = matchesPrice && matchesTags ? 'block' : 'none';
+    });
 }
