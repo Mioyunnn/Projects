@@ -73,17 +73,105 @@ tags.forEach(tag => {
     });
 });
 
-function updateSellItemDisplay() {
-    const value = parseInt(rangeInput.value, 10);
-    const activeTags = Array.from(document.querySelectorAll(".keywords-wrapper span")).map(span => span.innerText.trim());
+const searchBox = document.getElementById("sell-searchbox");
+
+const filterItems = () => {
+    const searchValue = searchBox.value.toLowerCase();
+    const sellItems = document.querySelectorAll(".sell-item");
 
     sellItems.forEach(item => {
-        const itemPrice = parseInt(item.querySelector("p").textContent.replace("$", ""), 10);
-        const itemTags = Array.from(item.querySelectorAll('.item-tags span')).map(span => span.innerText.trim());
-
-        const matchesPrice = itemPrice >= value;
-        const matchesTags = activeTags.length === 0 || activeTags.some(tag => itemTags.includes(tag));
-
-        item.style.display = matchesPrice && matchesTags ? 'block' : 'none';
+        const itemName = item.querySelector("h4").textContent.toLowerCase();
+        if (itemName.includes(searchValue)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
     });
+};
+
+searchBox.addEventListener("input", filterItems);
+
+const signInBtn = document.getElementById("sign");
+const signIn = document.getElementById("sign-in");
+const registerBtn = document.getElementById("register");
+const closeBtn = document.getElementById("close-btn");
+const header = document.querySelector("form h2")
+const overlay = document.getElementById("overlay");
+
+signInBtn.addEventListener("click", () => {
+    header.innerText = "Sign In"
+    signIn.style.display = "flex";
+    overlay.style.display = "block";
+    document.body.classList.add('no-scroll');
+})
+
+registerBtn.addEventListener("click", () => {
+    header.innerText = "Register"
+    signIn.style.display = "flex";
+    overlay.style.display = "block";
+    document.body.classList.add('no-scroll');
+})
+
+closeBtn.addEventListener("click", () => {
+    signIn.style.display = "none";
+    overlay.style.display = "none";
+    document.body.classList.remove('no-scroll');
+})
+/*form*/
+
+let pass = document.getElementById("password");
+let msg = document.getElementById("message");
+let str = document.getElementById("strength");
+
+pass.addEventListener("input", () => {
+    if(pass.value.length > 0){
+        pass.style.border = "1px solid #888888";
+        msg.style.display = "block";
+    }
+    else{
+        pass.style.border = "none";
+        msg.style.display = "none";
+    }
+    if(pass.value.length < 4){
+        str.innerText = "weak";
+        pass.style.borderColor = "#ff5925";
+        msg.style.color = "#ff5925";
+    }
+    else if(pass.value.length >= 4 && pass.value.length <=8){
+        str.innerText= "medium";
+        pass.style.borderColor = "yellow";
+        msg.style.color = "yellow";
+    }
+    else if(pass.value.length >=8){
+        str.innerText = "strong";
+        pass.style.borderColor = "#26d730"
+        msg.style.color = "#26d730";
+    }
+
+})
+
+let emailError = document.getElementById("email-error");
+let email = document.getElementById("email");
+
+email.addEventListener("input", () => {
+
+    if(email.value.length == 0){
+        emailError.style.display = "block"
+        emailError.style.color = "#ff5925"
+        emailError.innerHTML = "Email is required"
+    }
+    else if(email.value.length >= 10){
+        emailError.style.display = "block"
+        emailError.innerHTML = ""
+    }
+});
+
+
+function validateForm(){
+    if(!validateEmail){
+        submitError.style.display = "block";
+        submitError.innerHTML = "Please fix error to submit";
+        setTimeout(function(){submitError.style.display = "none";}, 3000);
+        return false;
+    }
 }
