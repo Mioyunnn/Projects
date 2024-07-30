@@ -13,7 +13,7 @@
 }
 #shop-header{
     padding: 10px;
-    border-bottom: 2px solid #d4d4d4;
+    border-bottom: 2px solid #000000;
 }
 .shop-nav{
     margin: 20px;
@@ -43,16 +43,6 @@
     outline: none;
     border-radius: 20px;
     user-select: none;
-}
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vh;
-    height: 100vh;
-    background: rgba(59, 59, 59, 0.5);
-    z-index: 999;
-    display: none;
 }
 body.no-scroll {
     overflow: hidden;
@@ -247,24 +237,23 @@ form input{
     margin-top: 0;
     width: 70%;
     height: 3em;
-    border-radius: 5px;
-    background-color: #b4b4b4;
+    border: 0;
+    border-bottom: 1px solid #d4d4d4;
     outline: none;
     text-indent: 1em;
 }
 #email{
-    border: 0;
     margin-bottom: 0;
 }
 #password{
     margin-bottom: 0;
-    border: none;
 }
 #submit{
     margin-top: 6em;
     background-color: #8abdf8;
     color: #fff;
     border: 0;
+    border-radius: 5px;
     font-size: 1em;
     font-weight: 700;
 }
@@ -393,6 +382,27 @@ input::placeholder{
     }
     .items-wrapper{
         margin-top: .5em;
+    }
+}
+@media (max-width: 414px){
+    aside{
+        display: none
+    }
+    header{
+        display: none;
+    }
+    .sell-item{
+        margin: 2em;
+        border: 2px solid #d4d4d4;
+        border-radius: 10px;
+        transition: transform 0.3s;
+    }
+    #sell-main{
+        width: 100%;
+        overflow: hidden;
+    }
+    #shop-main{
+        overflow: hidden;
     }
 }
 #sell-footer{

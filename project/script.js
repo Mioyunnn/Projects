@@ -125,11 +125,11 @@ let str = document.getElementById("strength");
 
 pass.addEventListener("input", () => {
     if(pass.value.length > 0){
-        pass.style.border = "1px solid #888888";
+        pass.style.borderBottom = "1px solid #888888";
         msg.style.display = "block";
     }
     else{
-        pass.style.border = "none";
+        pass.style.borderBottom = "1px solid #d4d4d4";
         msg.style.display = "none";
     }
     if(pass.value.length < 4){
@@ -147,7 +147,6 @@ pass.addEventListener("input", () => {
         pass.style.borderColor = "#26d730"
         msg.style.color = "#26d730";
     }
-
 })
 
 let emailError = document.getElementById("email-error");
@@ -166,12 +165,15 @@ email.addEventListener("input", () => {
     }
 });
 
+const submit = document.getElementById("submit");
 
-function validateForm(){
-    if(!validateEmail){
-        submitError.style.display = "block";
-        submitError.innerHTML = "Please fix error to submit";
-        setTimeout(function(){submitError.style.display = "none";}, 3000);
-        return false;
+submit.addEventListener("click", (e) => {
+    if(header.innerText === "Sign In"){
+        e.preventDefault();
+        alert("Successfully Sign in !");
     }
-}
+    else{
+        e.preventDefault();
+        alert("Successfully Register !");
+    }
+})
