@@ -5,6 +5,8 @@ const sellItems = document.querySelectorAll(".sell-item");
 function updateSellItemDisplay() {
     const value = parseInt(rangeInput.value, 10);
     const activeTags = Array.from(document.querySelectorAll(".keywords-wrapper span")).map(span => span.innerText.trim());
+    const itemsWrapper = document.querySelector(".items-wrapper");
+    const sellItems = Array.from(itemsWrapper.getElementsByClassName("sell-item"));
 
     sellItems.forEach(item => {
         const itemPrice = parseInt(item.querySelector("p").textContent.replace("$", ""), 10);
@@ -17,6 +19,35 @@ function updateSellItemDisplay() {
     });
 }
 
+// Event listeners for sorting buttons
+document.getElementById("price-descending").addEventListener("click", () => {
+    const itemsWrapper = document.querySelector(".items-wrapper");
+    const sellItems = Array.from(itemsWrapper.getElementsByClassName("sell-item"));
+
+    const sortedItems = sellItems.sort((a, b) => {
+        const priceA = parseInt(a.querySelector("p").textContent.replace("$", ""), 10);
+        const priceB = parseInt(b.querySelector("p").textContent.replace("$", ""), 10);
+        return priceB - priceA; // High to low sorting
+    });
+
+    itemsWrapper.innerHTML = "";
+    sortedItems.forEach(item => itemsWrapper.appendChild(item));
+});
+
+document.getElementById("price-ascending").addEventListener("click", () => {
+    const itemsWrapper = document.querySelector(".items-wrapper");
+    const sellItems = Array.from(itemsWrapper.getElementsByClassName("sell-item"));
+
+    const sortedItems = sellItems.sort((a, b) => {
+        const priceA = parseFloat(a.querySelector("p").textContent.replace("$", ""));
+        const priceB = parseFloat(b.querySelector("p").textContent.replace("$", ""));
+        return priceA - priceB; // Low to high sorting
+    });
+
+    itemsWrapper.innerHTML = "";
+    sortedItems.forEach(item => itemsWrapper.appendChild(item));
+});
+
 document.querySelectorAll(".clothes-wrapper label, .color-wrapper label, .size-wrapper label").forEach(tag => {
     tag.addEventListener("click", () => {
         toggleTag(tag, document.querySelector(".keywords-wrapper"));
@@ -24,6 +55,7 @@ document.querySelectorAll(".clothes-wrapper label, .color-wrapper label, .size-w
     });
 });
 
+/* price range */
 rangeInput.addEventListener("input", () => {
     priceDisplay.textContent = `$${rangeInput.value}-2000`;
     updateSellItemDisplay();
@@ -117,6 +149,7 @@ closeBtn.addEventListener("click", () => {
     overlay.style.display = "none";
     document.body.classList.remove('no-scroll');
 })
+
 /*form*/
 
 let pass = document.getElementById("password");
@@ -167,6 +200,14 @@ email.addEventListener("input", () => {
 
 const submit = document.getElementById("submit");
 
+function checkFormValidity() {
+    const isValid = email.value.length > 10 && pass.value.length > 8;
+    submit.disabled = !isValid;
+}
+
+email.addEventListener('input', checkFormValidity);
+pass.addEventListener('input', checkFormValidity);
+
 submit.addEventListener("click", (e) => {
     if(header.innerText === "Sign In"){
         e.preventDefault();
@@ -176,4 +217,6 @@ submit.addEventListener("click", (e) => {
         e.preventDefault();
         alert("Successfully Register !");
     }
+
 })
+

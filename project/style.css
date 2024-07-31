@@ -63,6 +63,7 @@ aside{
     border-radius: 7px;
     background-color: #fff;
     border: 2px solid #d4d4d4;
+    user-select: none;
 }
 .aside-wrapper{
     margin: 1em;

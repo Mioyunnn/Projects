@@ -35,8 +35,8 @@ body {
   --secondary-color: #9c1515;
   --third-color: #2f0b50;
   --white-1: #fff;
-  --brand-color: #000000;
-  --brand-shadow: #ccb6b6;
+  --brand-color: #fd4848;
+  --brand-shadow: #8f1c1c;
   --bg-color: linear-gradient(45deg, rgb(229, 217, 255), rgb(238, 238, 238));
   --nav-color: rgba(161, 193, 252, 0.7);
   --scrollbar-color: red;
