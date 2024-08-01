@@ -93,6 +93,9 @@ document.getElementById("project-27").addEventListener("click", function () {
 document.getElementById("project-28").addEventListener("click", function () {
   window.location.href = "Random Password Generator/index.html";
 });
+document.getElementById("project-29").addEventListener("click", function () {
+  window.location.href = "projects/index.html";
+});
 
 let dates = [
   "2024 / 7 / 15",
@@ -123,9 +126,11 @@ let dates = [
   "2024 / 7 / 17",
   "2024 / 7 / 11",
   "2024 / 7 / 05",
+  "2024 / 8 / 01",
+
 ];
 let originLangs = "<span>HTML</span>, <span>CSS</span>, <span>JS</span>";
-let currentLangs = document.querySelectorAll(".project p");
+let currentLangs = document.querySelectorAll(".fr p");
 
 currentLangs.forEach((langElement, index) => {
   langElement.addEventListener("mouseover", () => {
@@ -136,3 +141,37 @@ currentLangs.forEach((langElement, index) => {
     langElement.innerHTML = originLangs;
   });
 });
+
+const basicProjectsBtn = document.getElementById("btn-1");
+const projectsBtn = document.getElementById("btn-2");
+const basicProjects = document.querySelectorAll(".project-box div");
+const projects = document.querySelectorAll(".project");
+
+
+basicProjects.forEach(basicProject => {
+  basicProjectsBtn.addEventListener("click", () => {
+    basicProject.style.display = "block";
+  });
+  projectsBtn.addEventListener("click", () => {
+    basicProject.style.display = "none";
+  });
+})
+
+projects.forEach(project => {
+  basicProjectsBtn.addEventListener("click", () => {
+    project.style.display = "none";
+  });
+  projectsBtn.addEventListener("click", () => {
+    project.style.display = "block";
+  })
+})
+
+// TagName will call back a Collection, so I need to add [0] stuff.
+const main = document.getElementsByTagName("main")[0];
+const arrow = document.querySelector(".arrow");
+
+arrow.addEventListener("click" , () => {
+  const mainPosition = main.getBoundingClientRect().top + window.pageYOffset;
+  window.scrollTo({ top: mainPosition, behavior: "smooth"});
+})
+
