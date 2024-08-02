@@ -175,3 +175,23 @@ arrow.addEventListener("click" , () => {
   window.scrollTo({ top: mainPosition, behavior: "smooth"});
 })
 
+// Search function
+
+const searchBox = document.getElementById("search");
+
+const filterItems = () => {
+  const searchValue = searchBox.value.toLowerCase();
+  const projects = document.querySelectorAll(".fr");
+
+  projects.forEach(project => {
+    const projectName = project.querySelector("h2").textContent.toLowerCase();
+    if(projectName.includes(searchValue)){
+      project.style.display = "block";
+    }
+    else{
+      project.style.display = "none";
+    }
+  });
+};
+
+searchBox.addEventListener("input", filterItems);

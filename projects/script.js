@@ -115,7 +115,8 @@ const filterItems = () => {
         const itemName = item.querySelector("h4").textContent.toLowerCase();
         if (itemName.includes(searchValue)) {
             item.style.display = "block";
-        } else {
+        } 
+        else {
             item.style.display = "none";
         }
     });
