@@ -43,7 +43,7 @@ document.getElementById("project-11").addEventListener("click", function () {
   window.location.href = "Password toggle/index.html";
 });
 document.getElementById("project-12").addEventListener("click", function () {
-  window.location.href = "Password Strength Detector/index.html";
+  window.location.href = "Password Strength detector/index.html"
 });
 document.getElementById("project-13").addEventListener("click", function () {
   window.location.href = "Notes App/index.html";
