@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mio Shop</title>
+    <link rel="stylesheet" href="register.css">
+    <script src="https://kit.fontawesome.com/d2ca4f543a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div id="overlay"></div>
+        <header id="shop-header">
+            <nav class="shop-nav">
+                <a href="index.html"><i class="fa-solid fa-shop"></i></a>
+                <div class="nav-wrapper">
+                    <span>Pricing</span>
+                    <span>Solutions</span>
+                    <span>Community</span>
+                    <span>Resources</span>
+                    <span>Pricing</span>
+                    <span>Contacts</span>
+                </div>
+                <div class="user-wrapper">
+                    <span id="sign">Sign in</span>
+                    <span id="register">Register</span>
+                </div>
+                
+            </nav>
+        </header>
+        <main id="shop-main">
+            <div class="sign-wrapper">
+                <div class="notice">
+                    <h2>Sign In</h2>
+                    <h4>Welcome back.</h4>
+                </div>
+                <div class="form-wrapper">
+                    <form id="user-form">
+                        <label for="name" class="form-name">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name...">
+                        <label for="email" class="form-email">Email</label>
+                        <input type="email" id="email" placeholder="Enter your email...">
+                        <p id="email-error"></p>
+                        <label for="password" class="form-password">Password</label>
+                        <input type="password" id="password" placeholder="Enter your password...">
+                        <p id="errorMsg">Your password is <span id="strength"></span></p>
+                        <label for="msg" class="form-message">Message</label>
+                        <textarea name="message" id="msg" placeholder="Enter your message..."></textarea>
+                        <button id="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer id="sell-footer">
+            <div class="icons-wrapper">
+                <i class="fa-solid fa-shop"></i>
+                <br>
+                <span><i class="fa-brands fa-x-twitter"></i></span>
+                <span><i class="fa-brands fa-instagram"></i></span>
+                <span><i class="fa-brands fa-youtube"></i></span>
+            </div>
+            <div class="styles-wrapper">
+                <h3>Styles</h3>
+                <span>T-shirt</span>
+                <span>Skirt</span>
+                <span>Trousers</span>
+                <span>Jacket</span>
+                <span>Hat</span>
+                <span>long sleeves</span>
+                <span>scarf</span>
+            </div>
+            <div class="designers-wrapper">
+                <h3>Designers</h3>
+                <span>Coco Chanel</span>
+                <span>Yves Saint Laurent</span>
+                <span>Christian Dior</span>
+                <span>Giorgio Armani</span>
+                <span>Alexander McQueen</span>
+                <span>Vivienne Westwood</span>
+                <span>Karl Lagerfeld</span>
+            </div>
+            <div class="contacts-wrapper">
+                <h3>Contact us</h3>
+                <span>Email</span>
+                <span>Support</span>
+            </div>
+        </footer>
+        <footer id="shop-footer">
+            <span id="year">Copyright © 2024-2025 Mioyunnn. All rights reserved.</span>
+        </footer>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

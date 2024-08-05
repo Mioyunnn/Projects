@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Edu AU VIC WA NT Hand';
+    transform: all 0.3s forwards;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    height: 100%;
+}
+#shop-header{
+    padding: 10px;
+    border-bottom: 2px solid #000000;
+}
+.shop-nav{
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+    font-weight: 700;
+}
+.shop-nav i{
+    font-size: 1.75em;
+}
+.shop-nav .nav-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.nav-wrapper span{
+    margin-left: 1.8em;
+}
+.user-wrapper{
+    margin-left: 2em;
+}
+.user-wrapper span{
+    margin-left: .95em;
+    padding: 15px;
+    outline: none;
+    border-radius: 20px;
+    user-select: none;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+#sign{
+    background: #d4d4d4;
+}
+#register{
+    background: #000000;
+    color: #fff;
+}
+.sign-wrapper{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #d4d4d4;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.notice{
+    text-align: center;
+    margin-bottom: 1em;
+}
+.notice h2{
+    font-size: 4em;
+    margin-bottom: .3em;
+}
+.notice h4{
+    font-size: 2em;
+    font-weight: 400;
+}
+.form-wrapper{
+    width: 400px;
+    height: 35vh;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.form-name, #name, .form-message, #msg{
+    display: none;
+}
+#user-form{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
+#user-form p{
+    font-weight: 500;
+    margin-bottom: .3em;
+    display: none;
+}
+#user-form label{
+    font-weight: 500;
+    margin-bottom: 0.1em;
+}
+#user-form input, #user-form textarea{
+    margin: 0px 0px 2em 0px;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    border: 2px solid #d4d4d4;
+    padding: .8em;
+}
+#user-form button{
+    height: 50px;
+    border: 0;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1em;
+    color: #fff;
+    background-color: black;
+}
+input::placeholder{
+    font-size: 1em;
+}
+@media (max-width: 1110px){
+    .nav-wrapper span{
+        display: none;
+    }
+    #sell-nav{
+        flex-direction: column;
+    }
+    .tags{
+        margin-top: 2em;
+        flex-wrap: wrap;
+    }
+    .tags span{
+        margin: .4em;
+        font-size: 1em;
+    }
+    .items-wrapper{
+        margin-top: .5em;
+    }
+}
+@media (max-width: 414px){
+    header{
+        display: none;
+    }
+}
+#sell-footer{
+    display: flex;
+    justify-content: space-around;
+    margin: 1em;
+    border-top: 2px solid #d4d4d4;
+}
+.icons-wrapper, .styles-wrapper, .designers-wrapper, .contacts-wrapper{
+    margin: 1em;
+}
+.icons-wrapper, .styles-wrapper, .designers-wrapper, .contacts-wrapper{
+    font-size: 1.2em;
+}
+.icons-wrapper span{
+    margin-right: 1em;
+}
+.styles-wrapper, .designers-wrapper, .contacts-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.styles-wrapper h3, .designers-wrapper h3, .contacts-wrapper h3{
+    margin-bottom: 1.2em;
+}
+#shop-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#shop-footer{
+    background-color: #888888;
+    height: 5vh;
+}
+#shop-footer span{
+    color: #fff;
+    font-size: .8em;
+}

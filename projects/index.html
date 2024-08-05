@@ -10,20 +10,9 @@
 <body>
     <div class="container">
         <div id="overlay"></div>
-        <form id="sign-in" name="submit-to-google-sheet">
-            <span id="close-btn"><i class="fa-solid fa-xmark"></i></span>
-            <h2>Sign In</h2>
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Enter your email..." required>
-            <p id="email-error"></p>
-            <label for="password">Password:</label>
-            <input type="password" id="password" placeholder="Enter your password..." required>
-            <p id="message">Password is <span id="strength"></span></p>
-            <input type="submit" id="submit" disabled>
-        </form>
         <header id="shop-header">
             <nav class="shop-nav">
-                <i class="fa-solid fa-shop"></i>
+                <a href="index.html"><i class="fa-solid fa-shop"></i></a>
                 <div class="nav-wrapper">
                     <span>Pricing</span>
                     <span>Solutions</span>
@@ -33,10 +22,9 @@
                     <span>Contacts</span>
                 </div>
                 <div class="user-wrapper">
-                    <span id="sign">Sign in</span>
-                    <span id="register">Register</span>
+                    <span id="sign"><a href="register.html">Sign in</a></span>
+                    <span id="register"><a href="register.html">Register</a></span>
                 </div>
-                
             </nav>
         </header>
         <main id="shop-main">
