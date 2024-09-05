@@ -94,7 +94,7 @@ document.getElementById("project-28").addEventListener("click", function () {
   window.location.href = "Random Password Generator/index.html";
 });
 document.getElementById("project-29").addEventListener("click", function () {
-  window.location.href = "projects/index.html";
+  window.location.href = "projects/Shop/index.html";
 });
 
 let dates = [
