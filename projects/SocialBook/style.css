@@ -391,6 +391,11 @@ nav {
     top: 100%;
     right: 5%;
     z-index: 99;
+    max-height: 0;
+    transition: max-height 0.3s;
+}
+.settings-menu-height {
+    max-height: 450px;
 }
 
 .user-profile a {
