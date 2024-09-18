@@ -428,7 +428,12 @@ input[type="text"]{
 /*projects pictures*/
 #project-29 {
   background-image: url(preview-images/shop.png);
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
+}
+#project-30 {
+  background-image: url(preview-images/SocialBook.png);
+  background-size: cover;
   background-position: center;
 }
 .basicproject, .project{
