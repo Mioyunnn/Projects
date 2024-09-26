@@ -99,6 +99,9 @@ document.getElementById("project-29").addEventListener("click", function () {
 document.getElementById("project-30").addEventListener("click", function () {
   window.location.href = "projects/SocialBook/index.html";
 });
+document.getElementById("project-31").addEventListener("click", function () {
+  window.location.href = "projects/VidTube/index.html";
+});
 
 let dates = [
   "2024 / 7 / 15",
@@ -130,7 +133,8 @@ let dates = [
   "2024 / 7 / 11",
   "2024 / 7 / 05",
   "2024 / 8 / 01",
-  "2024 / 9 / 18"
+  "2024 / 9 / 18",
+  "2024 / 9 / 26"
 ];
 let originLangs = "<span>HTML</span>, <span>CSS</span>, <span>JS</span>";
 let currentLangs = document.querySelectorAll(".fr p");
