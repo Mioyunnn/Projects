@@ -438,6 +438,11 @@ input[type="text"]{
   background-size: cover;
   background-position: center;
 }
+#project-31 {
+  background-image: url(preview-images/VidTube.png);
+  background-size: cover;
+  background-position: center;
+}
 .basicproject, .project{
   width: 350px;
   height: 250px;
